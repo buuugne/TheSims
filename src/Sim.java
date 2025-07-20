@@ -1,9 +1,7 @@
 public class Sim {
     final private String name;
-    private int hungerLevel = 0;
-    private int exhaustionLevel = 0;
-    private int friendshipLevel = 0;
-    static private int maxFriendshipLevel = 10;
+    private int hungerLevel, exhaustionLevel, friendshipLevel = 0;
+    static private int maxFriendshipLevel, maxHungerLevel, maxExhaustionLevel = 10;
 
     void sleep() {
         this.exhaustionLevel = 0;
@@ -22,7 +20,9 @@ public class Sim {
 
     void println()
     {
-        System.out.println("Sim's name: "+ name + ", " + "Sim's hunger level: " + hungerLevel + ", " +"Sim's exhaustion level: " + exhaustionLevel);
+        System.out.println("Sim's name: "+ name);
+        System.out.println("Sim's hunger level: " + hungerLevel );
+        System.out.println("Sim's exhaustion level: " + exhaustionLevel);
     };
 
     public String getName() {
@@ -35,11 +35,29 @@ public class Sim {
 
     void setHungerLevel(int hungerLevel) {
         this.hungerLevel = hungerLevel;
+        if(this.hungerLevel > maxHungerLevel)
+            this.hungerLevel = maxHungerLevel;
+    }
+
+    public int getExhaustion() {
+        return exhaustionLevel;
+    }
+
+    void setExhaustionLevel(int exhaustionLevel) {
+        this.exhaustionLevel = exhaustionLevel;
+        if(this.exhaustionLevel > maxExhaustionLevel)
+            this.exhaustionLevel = maxExhaustionLevel;
+    }
+
+    @Override
+    public String toString() {
+        return "Sim " + getName();
     }
 
     Sim(){
         this("Unknown");
     }
+
     Sim(String name) {
         this.name = name;
     }

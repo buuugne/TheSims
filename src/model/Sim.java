@@ -1,24 +1,26 @@
-public class Sim {
+package model;
+
+public class Sim extends GameCharacter {
     final private String name;
     private int hungerLevel, exhaustionLevel, friendshipLevel = 0;
     static private int maxFriendshipLevel, maxHungerLevel, maxExhaustionLevel = 10;
 
-    void sleep() {
+    public void sleep() {
         this.exhaustionLevel = 0;
     };
-    void eat() {
+    public void eat() {
         this.hungerLevel = 0;
     };
-    void makeFriend() {
+    public void makeFriend() {
         System.out.println(name + " now has a friend");
         this.friendshipLevel = 1;
     };
-    void makeFriend(int increaseBy, String friendName) {
+    public void makeFriend(int increaseBy, String friendName) {
         this.friendshipLevel = friendshipLevel + increaseBy;//padidina butent cia ta sukurta friendshipLevel THIS
         System.out.println(name + " has befriended " + friendName);
     };
 
-    void println()
+    public void println()
     {
         System.out.println("Sim's name: "+ name);
         System.out.println("Sim's hunger level: " + hungerLevel );
@@ -52,13 +54,14 @@ public class Sim {
     @Override
     public String toString() {
         return "Sim " + getName();
-    }
+    }//kam to reikia?
 
-    Sim(){
+    public Sim(){
         this("Unknown");
     }
 
-    Sim(String name) {
+    public Sim(String name) {
+        super();
         this.name = name;
     }
 }

@@ -1,6 +1,8 @@
 package model;
 
-public class Person extends Sim {
+import interfaces.Artistic;
+
+public class Person extends Sim implements Artistic {
     int pianoSkillLevel = 0;
     static int MaxPianoSkillLevel = 10;
 

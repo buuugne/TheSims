@@ -1,5 +1,8 @@
 package interfaces;
 
-public interface Infected {
+import model.Sim;
 
+public interface Infected {
+    public void makeZombieSound();
+    public Sim bite(Sim sim);
 }

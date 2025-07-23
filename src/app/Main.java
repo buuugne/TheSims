@@ -6,7 +6,6 @@ public class Main {
         Sim sim = new Person("John");
         Zombie z = new Zombie("Zombie 1");
         z.bite(sim);
-        z.makeZombieSound();
         sim.println();
     }
 }

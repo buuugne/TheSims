@@ -51,6 +51,10 @@ public class Sim extends GameCharacter {
             this.exhaustionLevel = maxExhaustionLevel;
     }
 
+    public void makeSimDead(String name) {
+        super.death(name);
+    }
+
     @Override
     public String toString() {
         return "Sim " + getName();

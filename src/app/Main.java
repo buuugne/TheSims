@@ -3,13 +3,10 @@ import model.*;
 
 public class Main {
     public static void main(String[] args) {
-        Dog dog = new Dog("Minnie");
-        Person person = new Person("John");
-        dog.println();
-        person.println();
-        person.petADog(dog);
-        dog.println();
-
-
+        Sim sim = new Person("John");
+        Zombie z = new Zombie("Zombie 1");
+        z.bite(sim);
+        z.makeZombieSound();
+        sim.println();
     }
 }

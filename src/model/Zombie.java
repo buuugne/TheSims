@@ -1,11 +1,8 @@
 package model;
 
-import interfaces.Infected;
-
-public class Zombie extends Sim implements Infected {
-    @Override
-    public void makeZombieSound() {
-        System.out.println("Brrrr");
+public class Zombie extends AbstractZombie {
+    public Zombie(String name) {
+        super(name);
     }
 
     @Override
@@ -16,7 +13,4 @@ public class Zombie extends Sim implements Infected {
         return sim;//kad galeciau main'e naudot
     }
 
-    public Zombie(String name) {
-        super(name);
-    }
 }
